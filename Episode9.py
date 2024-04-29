@@ -20,8 +20,6 @@ for i in range(len(inputs)):
     print("Output:", output)
 
 print("OR Gate")
-inputs = np.array([[0,0],[0,1],[1,0],[1,1]])
-weights = [1, 1]
 threshold = 1
 
 for i in range(len(inputs)):    

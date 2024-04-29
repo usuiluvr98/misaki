@@ -7,9 +7,9 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 
 data = {
-    'X1':[1,2,3,4,5],
-    'X2':[1,4,12,16,20],
-    'Y':[1,2,4,6,8]
+    'X1':[1,2,3,4,5,6,7,8,9],
+    'X2':[1,4,12,16,20,25,32,38,43],
+    'Y':[1,2,4,8,12,15,22,29,34]
 }
 df = pd.DataFrame(data)
 
@@ -29,3 +29,12 @@ print("Intercept = ", model.intercept_)
 diff = pd.DataFrame({'Actual value': Y_test, 'Predicted value': Y_pred})
 print('\n')
 print(diff.head())
+
+plt.scatter(X['X1'], Y, color='blue', label='Data Points')
+plt.plot(X_test['X1'], Y_pred, color='red', label='Linear Regression Line')
+plt.scatter(X_test['X1'], Y_pred, color='green', label='Test Predictions')
+plt.xlabel('Feature 1')
+plt.ylabel('y')
+plt.title('Multiple Linear Regression')
+plt.legend()
+plt.show()

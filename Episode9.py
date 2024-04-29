@@ -1,3 +1,5 @@
+import numpy as np 
+
 def mcculloch_pitts_neuron(inputs, weights, threshold):
     if len(inputs) != len(weights):
         raise ValueError("Number of inputs must be equal to the number of weights")
@@ -7,10 +9,25 @@ def mcculloch_pitts_neuron(inputs, weights, threshold):
         return 1
     else:
         return 0
+print("AND Gate")
+inputs = np.array([[0,0],[0,1],[1,0],[1,1]])
+weights = [1, 1]
+threshold = 2
+for i in range(len(inputs)):    
+    input_pattern = inputs[i]
+    print("input: ",input_pattern)
+    output = mcculloch_pitts_neuron(input_pattern, weights, threshold)
+    print("Output:", output)
 
-inputs = [1, 1, 2]
-weights = [1, 0.5, 0.5]
-threshold = 1.5
+print("OR Gate")
+inputs = np.array([[0,0],[0,1],[1,0],[1,1]])
+weights = [1, 1]
+threshold = 1
 
-output = mcculloch_pitts_neuron(inputs, weights, threshold)
-print("Output:", output)
+for i in range(len(inputs)):    
+    input_pattern = inputs[i]
+    print("input: ",input_pattern)
+    output = mcculloch_pitts_neuron(input_pattern, weights, threshold)
+    print("Output:", output)
+
+
